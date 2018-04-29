@@ -83,6 +83,7 @@ class Radio extends React.Component {
             <div className="mdc-radio__inner-circle" />
           </div>
         </div>
+        {/* eslint-disable-next-line jsx-a11y/label-has-for */}
         <label htmlFor={getId()}>{label}</label>
       </div>
     );
