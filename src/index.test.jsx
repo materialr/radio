@@ -252,3 +252,23 @@ test('Destroys the MDCFormField component on unmount', () => {
   expect(actualFormField).toBe(expectedFormField);
   expect(actualRadio).toBe(expectedRadio);
 });
+
+test('Renders additional props', () => {
+  const DATA_QA = 'DATA_QA';
+  const wrapper = shallow(
+    <Radio
+      checked={CHECKED}
+      data-qa={DATA_QA}
+      label={LABEL}
+      name={NAME}
+      onChange={ON_CHANGE}
+      value={VALUE}
+    />,
+    { disableLifecycleMethods: true },
+  );
+  const expected = DATA_QA;
+
+  const actual = wrapper.props()['data-qa'];
+
+  expect(actual).toBe(expected);
+});

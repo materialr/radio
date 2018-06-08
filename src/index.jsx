@@ -44,7 +44,9 @@ class Radio extends React.Component {
       getId,
       props: {
         checked,
+        className,
         disabled,
+        id,
         label,
         name,
         onBlur,
@@ -53,12 +55,14 @@ class Radio extends React.Component {
         onDrop,
         onFocus,
         value,
+        ...props
       },
     } = this;
     return (
       <div
         className="mdc-form-field"
         ref={(elementFormField) => { this.elementFormField = elementFormField; }}
+        {...props}
       >
         <div
           className={getClassNames()}
